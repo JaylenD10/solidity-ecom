@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -7,12 +7,12 @@
 }
 
 :root {
-  --clr-white: #FFFFFF;
+  --clr-white: #ffffff;
   --clr-black: #000000;
   --clr-grey: #707070;
   --clr-bunker: #131921;
   --clr-ebony-clay: #232f3e;
-  --clr-orange: #FF9900;
+  --clr-orange: #ff9900;
   --clr-orange-dark: #cc8111;
 }
 
@@ -88,14 +88,58 @@ nav {
   color: var(--clr-orange);
 }
 
-.nav__search {
+/* .nav__search {
   padding: 10px;
   border-radius: 6px;
   min-width: 50%;
+} */
+
+.nav__searchContainer {
+  position: relative; /* Ensures child elements like nav__results are positioned relative to this */
+  width: 100%; /* Matches the width of .nav__search */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the search bar and results */
 }
 
 .nav__search:hover {
   outline: 1px solid var(--clr-orange);
+}
+
+.nav__search {
+  min-width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+}
+
+.nav__results {
+  position: relative;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+
+.nav__search:focus + .nav__results,
+.nav__results:hover {
+  display: block;
+}
+
+.nav__results li {
+  padding: 8px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav__results li:hover {
+  background: #f0f0f0;
 }
 
 .nav__connect {
